@@ -1,0 +1,25 @@
+version: 2.1
+
+
+jobs:
+  build-docker-image:
+    docker:
+      -image: cing/python:3.8.12
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 20.10.12
+      - run:
+          name: Build Docker Iamge
+          command: |
+            docker build . -f Dockerfile -t demo_image
+
+workflows:
+  main:
+    jobs:
+      - build-docker-image:
+          filters:
+            branches:
+              only:
+                - master
+                - main
