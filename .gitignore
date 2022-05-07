@@ -36,4 +36,4 @@ MANIFEST
 # Installer
 
 .idea
-./venv
+.venv
