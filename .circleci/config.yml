@@ -25,3 +25,4 @@ workflows:
               only:
                 - master
                 - main
+                - add_docker_elements
